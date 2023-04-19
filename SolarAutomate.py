@@ -19,6 +19,7 @@ import sys
 
 ee.Initialize(project = 'solar-app-384209')
 ee.Authenticate()
+subprocess.run(['earthengine', 'authenticate'])
 geolocator = Nominatim(user_agent=os.path.abspath(sys.argv[0]))
 
 st.title("Estimating Rooftop Solar Potential")
