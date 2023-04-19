@@ -14,8 +14,8 @@ from geopy.geocoders import Nominatim
 import os
 import webbrowser
 import sys
-if st.button('Open Terminal'):
-    st.terminal()
+# if st.button('Open Terminal'):
+#     st.terminal()
 
 ee.Initialize(project = 'solar-app-384209')
 ee.Authenticate()
