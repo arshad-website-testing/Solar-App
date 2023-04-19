@@ -4,7 +4,7 @@ import ee
 import subprocess
 
 # subprocess.run(['gcloud', 'init'])
-# ee.Authenticate()
+ee.Authenticate()
 json_data = st.secrets["json_data"]
 import numpy as np
 import math
