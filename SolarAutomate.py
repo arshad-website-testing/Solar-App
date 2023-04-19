@@ -3,11 +3,7 @@ import pandas as pd
 import ee
 import subprocess
 
-subprocess.run(['curl', 'https://sdk.cloud.google.com', '--silent', '--fail', '--output', 'install.sh'])
-# subprocess.run(['bash', 'install.sh', '--disable-prompts'])
-# subprocess.run(['exec', 'bash'])
-
-subprocess.run(['gcloud', 'init'])
+# subprocess.run(['gcloud', 'init'])
 ee.Authenticate()
 import numpy as np
 import math
