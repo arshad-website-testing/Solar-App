@@ -1,11 +1,8 @@
 import streamlit as st
 import pandas as pd
 import ee
-import subprocess
-
-# subprocess.run(['gcloud', 'init'])
-ee.Authenticate()
 json_data = st.secrets["json_data"]
+service_account = st.secrets["service_account"]
 import numpy as np
 import math
 from scipy.optimize import fsolve
