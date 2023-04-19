@@ -14,6 +14,7 @@ from geopy.geocoders import Nominatim
 import os
 import webbrowser
 import sys
+import subprocess
 # if st.button('Open Terminal'):
 #     st.terminal()
 
