@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 import ee
+import subprocess
+subprocess.run(['gcloud', 'init'])
 ee.Authenticate()
 import numpy as np
 import math
