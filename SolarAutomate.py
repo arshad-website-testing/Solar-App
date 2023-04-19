@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import ee
+ee.Authenticate()
 import numpy as np
 import math
 from scipy.optimize import fsolve
@@ -14,12 +15,9 @@ from geopy.geocoders import Nominatim
 import os
 import webbrowser
 import sys
-# if st.button('Open Terminal'):
-#     st.terminal()
 
 ee.Initialize(project = 'solar-app-384209')
-ee.Authenticate()
-subprocess.run(['earthengine', 'authenticate'])
+
 geolocator = Nominatim(user_agent=os.path.abspath(sys.argv[0]))
 
 st.title("Estimating Rooftop Solar Potential")
@@ -169,9 +167,9 @@ if submit:
     st.write('')
     st.write('')
     
-url = 'https://arshad-website-testing-solar-app-solarautomate-u624xa.streamlit.app/'
+# url = 'https://arshad-website-testing-solar-app-solarautomate-u624xa.streamlit.app/'
 
-submit1 = st.form_submit_button('See Bhopal Demo')
-if st.button('See Bhopal Demo'):
-    webbrowser.open_new_tab(url)
+# # submit1 = st.form_submit_button('See Bhopal Demo')
+# if st.button('See Bhopal Demo'):
+#     webbrowser.open_new_tab(url)
         
