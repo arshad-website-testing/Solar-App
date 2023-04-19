@@ -16,14 +16,7 @@ import webbrowser
 import sys
 
 ee.Initialize(project = 'solar-app-384209')
-def execute_command(cmd):
-    process = subprocess.Popen(cmd, stdout=subprocess.PIPE, shell=True)
-    output, error = process.communicate()
-    if error:
-        st.error(error.decode())
-    else:
-        st.code(output.decode())
-execute_command("earthengine authenticate")
+ee.Authenticate()
 geolocator = Nominatim(user_agent=os.path.abspath(sys.argv[0]))
 
 st.title("Estimating Rooftop Solar Potential")
@@ -173,7 +166,7 @@ if submit:
     st.write('')
     st.write('')
     
-url = 'https://arshad272-solar-app-solarautomate-mwxqm2.streamlit.app/'
+url = 'https://arshad-website-testing-solar-app-solarautomate-u624xa.streamlit.app/'
 
 #submit1 = st.form_submit_button('See Bhopal Demo')
 if st.button('See Bhopal Demo'):
