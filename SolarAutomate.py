@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import ee
-# ee.Authenticate()
+ee.Authenticate()
 import numpy as np
 import math
 from scipy.optimize import fsolve
