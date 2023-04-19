@@ -18,6 +18,7 @@ import sys
 #     st.terminal()
 
 ee.Initialize(project = 'solar-app-384209')
+subprocess.run(['earthengine', 'authenticate'])
 ee.Authenticate()
 geolocator = Nominatim(user_agent=os.path.abspath(sys.argv[0]))
 
