@@ -170,7 +170,7 @@ if submit:
     
 url = 'https://arshad-website-testing-solar-app-solarautomate-u624xa.streamlit.app/'
 
-#submit1 = st.form_submit_button('See Bhopal Demo')
+submit1 = st.form_submit_button('See Bhopal Demo')
 if st.button('See Bhopal Demo'):
     webbrowser.open_new_tab(url)
         
