@@ -20,7 +20,7 @@ import os
 import webbrowser
 import sys
 
-ee.Initialize(project = 'solar-app-384209')
+ee.Initialize()
 
 geolocator = Nominatim(user_agent=os.path.abspath(sys.argv[0]))
 
