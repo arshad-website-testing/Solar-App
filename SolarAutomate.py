@@ -46,6 +46,35 @@ if submit:
     collection = ee.ImageCollection('LANDSAT/LC08/C01/T1_TOA').filterDate('2020-01-01', '2020-12-31').filterBounds(ee.Geometry.Point(lon,lat))
     count = collection.size()
 
+ee.Initialize()
+geolocator = Nominatim(user_agent=os.path.abspath(sys.argv[0]))
+
+st.title("Estimating Rooftop Solar Potential")
+st.text("Know your building's solar potential and make the right decision! Protect environment!!")
+
+imageurl = 'https://raw.githubusercontent.com/VinamraBharadwaj/SolarWebApp/main/Slide1.PNG'
+img = ulr.urlopen(imageurl)
+
+image = Image.open(img)
+st.image(image,use_column_width=True)
+st.markdown('<style>body{background-color: black;}</style>',unsafe_allow_html=True)
+
+form = st.form(key='my-form')
+place = form.text_input('Enter City Name:')
+area = form.text_input('Rooftop Area (m.sq.):')
+cover = form.slider("Percentage of Roof for Solar Installation:")
+btype = form.selectbox('Select Category of Building:',('Residential', 'Commercial', 'PSP', 'Recreation'))
+tariff = form.text_input('Averge Electricity Cost (₹/kWh):')
+submit = form.form_submit_button('Submit')
+
+if submit:
+    #st.header('ss')
+    location = geolocator.geocode(place)
+    lat = location.latitude
+    lon = location.longitude
+    collection = ee.ImageCollection('LANDSAT/LC08/C01/T1_TOA').filterDate('2020-01-01', '2020-12-31').filterBounds(ee.Geometry.Point(lon,lat))
+    count = collection.size()
+
     n = 2#count.getInfo()
     colList = collection.toList(n)
     colpd = pd.DataFrame()
@@ -167,9 +196,10 @@ if submit:
     st.write('')
     st.write('')
     
-# url = 'https://arshad-website-testing-solar-app-solarautomate-u624xa.streamlit.app/'
+url = 'https://arshad-website-testing-solar-app-solarautomate-u624xa.streamlit.app/'
 
 # # submit1 = st.form_submit_button('See Bhopal Demo')
 # if st.button('See Bhopal Demo'):
 #     webbrowser.open_new_tab(url)
+
         
