@@ -18,13 +18,14 @@ import webbrowser
 import sys
 import subprocess
 
-subprocess.run(['pip', 'install', 'earthengine-api'])
+# subprocess.run(['pip', 'install', 'earthengine-api'])
 
-os.system('curl https://sdk.cloud.google.com | bash')
-if 'google-cloud-sdk/bin' not in os.environ['PATH']:
-    os.environ['PATH'] += ':/home/appuser/google-cloud-sdk/bin'
+# os.system('curl https://sdk.cloud.google.com | bash')
+# if 'google-cloud-sdk/bin' not in os.environ['PATH']:
+#     os.environ['PATH'] += ':/home/appuser/google-cloud-sdk/bin'
 
 os.system('gcloud auth login')
+subprocess.run(['Y'])
 ee.Authenticate()
 
 ee.Initialize()
