@@ -18,9 +18,9 @@ import webbrowser
 import sys
 import subprocess
 
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "secret.json"
-
 ee.Initialize()
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "secret.json"
+ee.Authenticate()
 
 geolocator = Nominatim(user_agent=os.path.abspath(sys.argv[0]))
 
