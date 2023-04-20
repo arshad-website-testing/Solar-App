@@ -25,7 +25,7 @@ import subprocess
 #     os.environ['PATH'] += ':/home/appuser/google-cloud-sdk/bin'
 
 os.system('gcloud auth login')
-subprocess.run(['Y'])
+# subprocess.run(['Y'])
 ee.Authenticate()
 
 ee.Initialize()
