@@ -22,7 +22,7 @@ if 'google-cloud-sdk/bin' not in os.environ['PATH']:
     os.environ['PATH'] += ':/root/google-cloud-sdk/bin'
 
 os.system('gcloud auth login')
-
+ee.Authenticate()
 
 ee.Initialize()
 
