@@ -17,6 +17,13 @@ import os
 import webbrowser
 import sys
 
+os.system('curl https://sdk.cloud.google.com | bash')
+if 'google-cloud-sdk/bin' not in os.environ['PATH']:
+    os.environ['PATH'] += ':/root/google-cloud-sdk/bin'
+
+os.system('gcloud auth login')
+
+
 ee.Initialize()
 
 geolocator = Nominatim(user_agent=os.path.abspath(sys.argv[0]))
